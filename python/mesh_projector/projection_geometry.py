@@ -38,10 +38,10 @@ class ProjectionGeometry:
         return self.__det_radius
 
 class ConeGeometry(ProjectionGeometry):
-    def __init__(self, det_spacing_x: np.float, det_spacing_y: np.float,
-                 det_row_count: np.int, det_col_count: np.int,
-                 angles: np.int or np.ndarray, source_origin: np.float, origin_det: np.float,
-                 detector_geom: str, detector_cylinder_radius:float):
+    def __init__(self, det_spacing_x: np.float32, det_spacing_y: np.float32,
+                 det_row_count: np.int32, det_col_count: np.int32,
+                 angles: np.int32 | np.ndarray, source_origin: np.float32, origin_det: np.float32,
+                 detector_geom: str, detector_cylinder_radius: float):
         super().__init__(type='cone', detector_geom=detector_geom, det_radius=detector_cylinder_radius)
         self._det_spacing_x = det_spacing_x
         self._det_spacing_y = det_spacing_y
@@ -152,9 +152,9 @@ class ConeVecGeometry(ProjectionGeometry):
             }
 
 class ConeMeshTransform(ProjectionGeometry):
-    def __init__(self, det_spacing_x: np.float, det_spacing_y: np.float,
+    def __init__(self, det_spacing_x: np.float32, det_spacing_y: np.float32,
                  det_row_count: int, det_col_count: int,
-                 view_keys: int or list,
+                 view_keys: int | list,
                  projector_view, detector_geom: str, detector_cylinder_radius:float):
         super().__init__(type='cone_mesh_transform', detector_geom=detector_geom, det_radius=detector_cylinder_radius)
         self.__det_spacing_x = det_spacing_x

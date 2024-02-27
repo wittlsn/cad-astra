@@ -174,7 +174,7 @@ fi
 cd $PROJ_DIR/python
 # LDFLAGS="-L$BUILD_DIR -lproject_mesh -Wl,-rpath=$BUILD_DIR" python setup.py build --build-base=$BUILD_DIR/python
 echo "Starting setuptools..."
-python setup.py build --build-base=$BUILD_DIR/python ${DISTUTILS_INSTALL}
+python3 setup.py build --build-base=$BUILD_DIR/python ${DISTUTILS_INSTALL}
 # TODO: install with pip:
 # PROJ_DIR=$(pwd)/../ pip install .
 
