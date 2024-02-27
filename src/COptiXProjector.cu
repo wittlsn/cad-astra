@@ -204,7 +204,7 @@ void COptiXProjector<GeometryPolicy, T_3DIndex>::create_module()
 
     size_t actual_size_of_log = m_sizeof_log;
 
-    OPTIX_CHECK( optixModuleCreateFromPTX(
+    OPTIX_CHECK( optixModuleCreate(
                     m_context,
                     &module_compile_options,
                     &m_pipeline_compile_options,
@@ -216,7 +216,7 @@ void COptiXProjector<GeometryPolicy, T_3DIndex>::create_module()
                     ) );
 
     actual_size_of_log = m_sizeof_log;
-    OPTIX_CHECK( optixModuleCreateFromPTX(
+    OPTIX_CHECK( optixModuleCreate(
                     m_context,
                     &module_compile_options,
                     &m_pipeline_compile_options,
